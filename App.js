@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, FlatList, Alert} from 'react-native';
-import {uuid} from 'uuidv4';
+import uuid from 'react-native-uuid';
 
 import Header from './components/Header';
 import ListItem from './components/ListItem';
@@ -9,19 +9,19 @@ import AddItem from './components/AddItem';
 const App = () => {
   const [items, setItems] = useState([
     {
-      id: uuid(),
+      id: uuid.v4(),
       text: 'Milk',
     },
     {
-      id: uuid(),
+      id: uuid.v4(),
       text: 'Eggs',
     },
     {
-      id: uuid(),
+      id: uuid.v4(),
       text: 'Bread',
     },
     {
-      id: uuid(),
+      id: uuid.v4(),
       text: 'Juice',
     },
   ]);
@@ -74,7 +74,7 @@ const App = () => {
       );
     } else {
       setItems(prevItems => {
-        return [{id: uuid(), text}, ...prevItems];
+        return [{id: uuid.v4(), text}, ...prevItems];
       });
     }
   };
